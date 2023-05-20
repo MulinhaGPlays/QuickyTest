@@ -1,0 +1,78 @@
+﻿{
+    "assunto": "Física moderna",
+    "materia": "Física",
+    "serie": "5",
+    "nivel": "Faculdade",
+    "qtdquestoes": 2,
+    "possuicontexto": true,
+    "questoes": [
+        {
+            "numero_questao": 1,
+            "contexto": "Em uma experiência de física moderna, um elétron é disparado por uma fenda e colide com a parede ao final de sua trajetória. Com base nessa informação, responda:",
+            "pergunta": "Qual é a trajetória do elétron?",
+            "qtdalternativas": 5,
+            "alternativas": [
+                {
+                    "alternativa": "A",
+                    "enunciado": "Linear"
+                },
+                {
+                    "alternativa": "B",
+                    "enunciado": "Circular"
+                },
+                {
+                    "alternativa": "C",
+                    "enunciado": "Ziguezague"
+                },
+                {
+                    "alternativa": "D",
+                    "enunciado": "Aleatória"
+                },
+                {
+                    "alternativa": "E",
+                    "enunciado": "Parabólica"
+                }
+            ]
+        },
+        {
+            "numero_questao": 2,
+            "contexto": "Um experimento de física moderna envolve um feixe de elétrons que passa por uma dupla fenda. Com base nessa informação, responda:",
+            "pergunta": "O que acontece com o padrão de interferência quando se observa individualmente a passagem dos elétrons pelas fendas?",
+            "qtdalternativas": 5,
+            "alternativas": [
+                {
+                    "alternativa": "A",
+                    "enunciado": "Não ocorre alteração no padrão"
+                },
+                {
+                    "alternativa": "B",
+                    "enunciado": "O padrão é anulado"
+                },
+                {
+                    "alternativa": "C",
+                    "enunciado": "O padrão é intensificado"
+                },
+                {
+                    "alternativa": "D",
+                    "enunciado": "O padrão é alterado para outro tipo"
+                },
+                {
+                    "alternativa": "E",
+                    "enunciado": "O padrão é invertido"
+                }
+            ]
+        }
+    ],
+    "respostas": [
+        {
+            "numero_questao": 1,
+            "alternativa": "D",
+            "explicacao": "De acordo com a Mecânica quântica, elétrons não seguem trajetórias definidas, mas sim se comportam de forma aleatória, sendo impossível determinar sua trajetória exata."
+        },
+        {
+            "numero_questao": 2,
+            "alternativa": "D",
+            "explicacao": "Quando se observa individualmente a passagem dos elétrons pelas fendas, ocorre o fenômeno denominado 'colapso da função de onda', que altera o padrão de interferência."
+        }
+    ]
+}

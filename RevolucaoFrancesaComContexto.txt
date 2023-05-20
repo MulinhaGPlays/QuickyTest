@@ -1,0 +1,81 @@
+﻿{
+  "ano": "",
+  "assunto": "Revolução Francesa",
+  "materia": "História",
+  "serie": "3",
+  "nivel": "Ensino médio",
+  "qtdquestoes": 2,
+  "possuicontexto": true,
+  "questoes": [
+    {
+      "numero_questao": 1,
+      "contexto": "A Revolução Francesa foi um importante período histórico ocorrido na França no final do século XVIII. A revolta popular foi motivada principalmente pela insatisfação com as políticas econômicas do governo e pelo sistema político que privilegiava a nobreza e o clero. A partir disso, diversas mudanças foram implementadas na França. Considerando esse contexto histórico, analise as afirmativas abaixo:\n\nI - A Declaração dos Direitos do Homem e do Cidadão foi uma importante conquista da Revolução Francesa e serviu de inspiração para diversas outras lutas populares ao redor do mundo.\n\nII - Durante a Revolução Francesa, os ideais monarquistas foram abandonados, e a república foi estabelecida na França.\n\nIII - A Revolução Francesa não teve impacto direto na história dos países ao redor da França.\n\nIV - A execução do rei Luis XVI foi um evento importante que marcou a radicalização da Revolução Francesa.\n\nÉ correto o que se afirma em:\n",
+      "pergunta": "A partir das afirmativas acima, marque a alternativa que contém apenas afirmações corretas:",
+      "qtdalternativas": 5,
+      "alternativas": [
+        {
+          "alternativa": "A",
+          "enunciado": "I e II"
+        },
+        {
+          "alternativa": "B",
+          "enunciado": "I e III"
+        },
+        {
+          "alternativa": "C",
+          "enunciado": "I e IV"
+        },
+        {
+          "alternativa": "D",
+          "enunciado": "II e III"
+        },
+        {
+          "alternativa": "E",
+          "enunciado": "III e IV"
+        }
+      ]
+    },
+    {
+      "numero_questao": 2,
+      "contexto": "A Revolução Francesa foi dividida em três etapas: a primeira, também conhecida como Revolução Liberal, ocorreu entre 1789 e 1791; a segunda, chamada de Convenção Nacional, foi entre 1792 e 1795; e a terceira, conhecida como O Terror, foi de 1793 a 1794. Considerando o contexto histórico francês, marque a alternativa correta:",
+      "pergunta": "Qual o nome e a data da segunda etapa da Revolução Francesa?",
+      "qtdalternativas": 5,
+      "alternativas": [
+        {
+          "alternativa": "A",
+          "enunciado": "Convenção Nacional, de 1792 a 1795"
+        },
+        {
+          "alternativa": "B",
+          "enunciado": "Revolução Liberal, de 1789 a 1791"
+        },
+        {
+          "alternativa": "C",
+          "enunciado": "O Terror, de 1793 a 1794"
+        },
+        {
+          "alternativa": "D",
+          "enunciado": "O Absolutismo, de 1792 a 1795"
+        },
+        {
+          "alternativa": "E",
+          "enunciado": "A Reforma Agrária, de 1789 a 1791"
+        }
+      ]
+    }
+  ],
+  "respostas": [
+    {
+      "numero_questao": 1,
+      "alternativa": "A",
+      "explicação": "A Declaração dos Direitos do Homem e do Cidadão foi, de fato, uma importante conquista da Revolução Francesa e americou diversos países a lutar por seus direitos. Além disso, os ideais monarquistas foram abandonados e a república foi estabelecida na França."
+    },
+    {
+      "numero_questao": 2,
+      "alternativa": "A",
+      "explicação": "A segunda etapa da Revolução Francesa foi a Convenção Nacional, que ocorreu entre 1792 e 1795."
+    }
+  ],
+  "UUID_usuario": "",
+  "UUID_prova": ""
+}
