@@ -1,0 +1,45 @@
+﻿{
+    "assunto": "A Internacionalização da produção.",
+    "materia": "Geografia",
+    "serie": "3",
+    "nivel": "Ensino médio",
+    "qtdquestoes": 1,
+    "possuicontexto": true,
+    "questoes": [
+        {
+            "numero_questao": 1,
+            "contexto": "A internacionalização da produção é um fenômeno que ganhou força a partir da década de 1980, com a intensificação dos processos de globalização da economia. Neste contexto, empresas de diversos países começaram a estabelecer operações em outras nações, buscando vantagens em termos de mão de obra e recursos naturais, além de oportunidades de mercado.",
+            "pergunta": "O que é a internacionalização da produção?",
+            "qtdalternativas": 5,
+            "alternativas": [
+                {
+                    "alternativa": "A",
+                    "enunciado": "É o processo de integração entre diferentes culturas no ambiente empresarial."
+                },
+                {
+                    "alternativa": "B",
+                    "enunciado": "É a produção de bens e serviços que são vendidos apenas em um único país."
+                },
+                {
+                    "alternativa": "C",
+                    "enunciado": "É o fenômeno que ocorre quando empresas estabelecem operações em outros países."
+                },
+                {
+                    "alternativa": "D",
+                    "enunciado": "É uma estratégia empresarial que tem como objetivo a preservação da cultura local."
+                },
+                {
+                    "alternativa": "E",
+                    "enunciado": "É um processo que se iniciou na década de 1960, com a liberalização dos fluxos financeiros internacionais."
+                }
+            ]
+        }
+    ],
+    "respostas": [
+        {
+            "numero_questao": 1,
+            "alternativa": "C",
+            "explicacao": "A internacionalização da produção é um fenômeno que ocorre quando empresas estabelecem operações em outros países."
+        }
+    ]
+}

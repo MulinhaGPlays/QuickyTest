@@ -35,17 +35,19 @@ var options = new JsonSerializerOptions
     PropertyNameCaseInsensitive = true
 };
 
+string texto = String.Empty;//não vai ter
 await foreach (var result in api.ChatEndpoint.StreamCompletionEnumerableAsync(chatRequest))
 {
-    string value = result.FirstChoice;
-    json.Append(value);
-    //Console.Write(value);
-    await File.AppendAllTextAsync(@"C:\Users\MulinhaGPlays\Documents\GitHub\QuickyTest\result.txt", value, Encoding.UTF8);
+    json.Append(result.FirstChoice);
+    await File.AppendAllTextAsync(@"C:\Users\MulinhaGPlays\Documents\GitHub\QuickyTest\result.txt", result.FirstChoice, Encoding.UTF8);
     try {
         string validJson = JsonValidator.CloseJson(json.ToString());
         await using var stream = new MemoryStream(Encoding.UTF8.GetBytes(validJson));
         var asyncProva = await JsonSerializer.DeserializeAsync<Prova>(stream, options);
-        Console.WriteLine(asyncProva?.questoes.FirstOrDefault()?.contexto ?? "Erro do sistema");
+        string txtnovo = asyncProva?.questoes.FirstOrDefault()?.contexto ?? String.Empty;
+        //TODO: chamar o commando de construir prova e retornar texto no yield return
+        Console.Write(txtnovo[texto.Length..]); //não vai ter
+        texto += txtnovo[texto.Length..]; //não vai ter
         JsonSerializer.Deserialize<Prova>(json.ToString()); break;
     }
     catch { continue; }

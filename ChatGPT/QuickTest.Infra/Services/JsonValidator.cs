@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace QuickyTest.Infra.Services;
+﻿namespace QuickyTest.Infra.Services;
 
 public class JsonValidator
 {
@@ -33,6 +31,8 @@ public class JsonValidator
 
                 if (calc >= 1)
                 {
+                    while (based.LastIndexOf(dic.Key) < based.LastIndexOf(dic.Value))
+                        based = based[..based.LastIndexOf(dic.Key)];
                     int lastIndex = based.LastIndexOf(c.Key);
                     indexes[c.Key] = lastIndex;
                 }
