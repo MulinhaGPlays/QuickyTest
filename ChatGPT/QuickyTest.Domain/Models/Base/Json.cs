@@ -12,6 +12,7 @@ namespace QuickyTest.Domain.Models.Base
         {
             var options = new JsonSerializerOptions();
             options.Encoder = JavaScriptEncoder.Create(UnicodeRanges.All);
+            options.PropertyNameCaseInsensitive = true;
             return options;
         }
 

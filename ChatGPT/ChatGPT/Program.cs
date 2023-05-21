@@ -2,6 +2,7 @@
 using OpenAI.Chat;
 using OpenAI.Models;
 using QuickyTest.Domain.Models;
+using QuickyTest.Infra.Services;
 using System.Text;
 using System.Text.Json;
 
@@ -10,11 +11,11 @@ var api = new OpenAIClient("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"
 
 var prompt = new Prompt
 {
-    assunto = "Física moderna",
-    materia = "Física",
-    serie = "5",
-    nivel = "Faculdade",
-    qtdquestoes = 2,
+    assunto = "A Internacionalização da produção.",
+    materia = "Geografia",
+    serie = "3",
+    nivel = "Ensino médio",
+    qtdquestoes = 1,
     possuicontexto = true,
 };
 
@@ -29,13 +30,22 @@ var chatRequest = new ChatRequest(chatPrompts, Model.GPT3_5_Turbo);
 StringBuilder json = new();
 Console.ForegroundColor = ConsoleColor.Red;
 
+var options = new JsonSerializerOptions
+{
+    PropertyNameCaseInsensitive = true
+};
+
 await foreach (var result in api.ChatEndpoint.StreamCompletionEnumerableAsync(chatRequest))
 {
     string value = result.FirstChoice;
     json.Append(value);
-    Console.Write(value);
+    //Console.Write(value);
     await File.AppendAllTextAsync(@"C:\Users\MulinhaGPlays\Documents\GitHub\QuickyTest\result.txt", value, Encoding.UTF8);
     try {
+        string validJson = JsonValidator.CloseJson(json.ToString());
+        await using var stream = new MemoryStream(Encoding.UTF8.GetBytes(validJson));
+        var asyncProva = await JsonSerializer.DeserializeAsync<Prova>(stream, options);
+        Console.WriteLine(asyncProva?.questoes.FirstOrDefault()?.contexto ?? "Erro do sistema");
         JsonSerializer.Deserialize<Prova>(json.ToString()); break;
     }
     catch { continue; }

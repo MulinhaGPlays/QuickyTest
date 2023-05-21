@@ -10,7 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens
 		FormatoPrompt.json = FormatoPrompt.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickyTest.Domain", "QuickyTest.Domain\QuickyTest.Domain.csproj", "{FECD2C0C-0EC2-4C42-9109-DD834C902009}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickyTest.Domain", "QuickyTest.Domain\QuickyTest.Domain.csproj", "{FECD2C0C-0EC2-4C42-9109-DD834C902009}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickyTest.Infra", "QuickTest.Infra\QuickyTest.Infra.csproj", "{DDC4E235-F764-4069-86DD-C5B9D250E9E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{FECD2C0C-0EC2-4C42-9109-DD834C902009}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FECD2C0C-0EC2-4C42-9109-DD834C902009}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FECD2C0C-0EC2-4C42-9109-DD834C902009}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDC4E235-F764-4069-86DD-C5B9D250E9E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDC4E235-F764-4069-86DD-C5B9D250E9E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDC4E235-F764-4069-86DD-C5B9D250E9E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDC4E235-F764-4069-86DD-C5B9D250E9E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

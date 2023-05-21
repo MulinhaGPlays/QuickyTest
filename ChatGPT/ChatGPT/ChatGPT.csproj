@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\QuickTest.Infra\QuickyTest.Infra.csproj" />
     <ProjectReference Include="..\QuickyTest.Domain\QuickyTest.Domain.csproj" />
   </ItemGroup>
 

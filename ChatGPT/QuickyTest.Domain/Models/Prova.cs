@@ -17,7 +17,9 @@ public class Prova : Json<Prova>
     public List<Questo> questoes { get; set; }
     public List<Resposta> respostas { get; set; }
     public string UUID_usuario { get; set; }
-    public string UUID_prova => Guid.NewGuid().ToString();
+    public string UUID_prova { get; private set; }
+
+    public void SetProvaUUID() => UUID_prova = Guid.NewGuid().ToString();
 
     public static implicit operator Prova? (string json) => JsonSerializer.Deserialize<Prova>(json);
 }
