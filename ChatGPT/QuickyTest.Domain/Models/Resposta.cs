@@ -2,7 +2,9 @@
 
 public class Resposta
 {
-    public int numero_questao { get; set; }
+    public string numero_questao { get; set; }
     public string alternativa { get; set; }
     public string explicacao { get; set; }
+
+    public string ToRequest() => $"{numero_questao}{alternativa}{explicacao}";
 }

@@ -1,33 +1,30 @@
-﻿namespace QuickyTest.Infra.Services;
+﻿ namespace QuickyTest.Infra.Services;
 
 public class JsonValidator
 {
     public static string CloseJson(string json)
     {
-        var variants = new Dictionary<char, char>
-        {
-            { '"', '"' },
-            { '{', '}' },
-            { '[', ']' },
-        };
-
-        string based = json;
+        var variants = new Dictionary<char, char> { { '"', '"' }, { '{', '}' }, { '[', ']' } };
         Dictionary<char, bool> results = new();
+        string based = json;
+
         while (results.Count == 0 || results.Any(x => x.Value)) 
         {
             Dictionary<char, int> indexes = new();
 
             bool verify(char c1, char c2) 
-                => ((based.Count(x => x == c1) + based.Count(x => x == c2 && c2 != '"')) % 2) is 1 
-                || based.Count(x => x == c1) != based.Count(x => x == c2);
+                => ((json.Count(x => x == c1) 
+                + json.Count(x => x == c2 && c2 != '"')) % 2) is 1 
+                || json.Count(x => x == c1) 
+                != json.Count(x => x == c2);
 
             foreach (var c in results.Where(x => x.Value is not false))
             {
                 var dic = variants.FirstOrDefault(x => x.Key == c.Key);
                 int calc = c.Key == '"'
-                    ? based.Count(x => x == dic.Key) % 2
-                    : based.Count(x => x == dic.Key) 
-                    - based.Count(x => x == dic.Value);
+                    ? json.Count(x => x == dic.Key) % 2
+                    : json.Count(x => x == dic.Key) 
+                    - json.Count(x => x == dic.Value);
 
                 if (calc >= 1)
                 {
