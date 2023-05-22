@@ -23,7 +23,7 @@ public class ProveGenerator
             materia = "Geografia",
             serie = "6",
             nivel = "fundamental 2",
-            qtdquestoes = 1,
+            qtdquestoes = 5,
             possuicontexto = false,
         };
         var chatPrompts = new List<Message>
