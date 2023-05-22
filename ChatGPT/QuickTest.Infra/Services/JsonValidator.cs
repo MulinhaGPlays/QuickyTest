@@ -1,6 +1,8 @@
-﻿ namespace QuickyTest.Infra.Services;
+﻿using System.Text.RegularExpressions;
 
-public class JsonValidator
+namespace QuickyTest.Infra.Services;
+
+public partial class JsonValidator
 {
     public static string CloseJson(string json)
     {
@@ -13,8 +15,8 @@ public class JsonValidator
             Dictionary<char, int> indexes = new();
 
             bool verify(char c1, char c2) 
-                => ((json.Count(x => x == c1) 
-                + json.Count(x => x == c2 && c2 != '"')) % 2) is 1 
+                => (json.Count(x => x == c1) 
+                + json.Count(x => x == c2 && c2 != '"')) % 2 is 1 
                 || json.Count(x => x == c1) 
                 != json.Count(x => x == c2);
 
@@ -39,9 +41,9 @@ public class JsonValidator
 
             json = indexes.OrderByDescending(x => x.Value).FirstOrDefault().Key switch
             {
-                '{' => String.Join(String.Empty, json.Append('}')),
-                '[' => String.Join(String.Empty, json.Append(']')),
-                '"' => String.Join(String.Empty, json.Append('"')),
+                '{' => string.Join(string.Empty, json.Append('}')),
+                '[' => string.Join(string.Empty, json.Append(']')),
+                '"' => string.Join(string.Empty, json.Append('"')),
                 _ => json,
             };
 
@@ -50,4 +52,14 @@ public class JsonValidator
         }
         return json;
     }
+
+    public static string RemoveSpacesOutsideQuotes(string input)
+    { 
+        Regex regex = RemoveSpacesOutsideQuotes();
+        string result = regex.Replace(input, "");
+        return result;
+    }
+
+    [GeneratedRegex("\\s+(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)")]
+    private static partial Regex RemoveSpacesOutsideQuotes();
 }

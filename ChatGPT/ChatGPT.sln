@@ -5,14 +5,9 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatGPT", "ChatGPT\ChatGPT.csproj", "{BD9115BF-2D07-431A-9769-203318D7F05C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{66A6FF44-34DF-40B9-90DC-A353345CFE9D}"
-	ProjectSection(SolutionItems) = preProject
-		FormatoPrompt.json = FormatoPrompt.json
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickyTest.Domain", "QuickyTest.Domain\QuickyTest.Domain.csproj", "{FECD2C0C-0EC2-4C42-9109-DD834C902009}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickyTest.Infra", "QuickTest.Infra\QuickyTest.Infra.csproj", "{DDC4E235-F764-4069-86DD-C5B9D250E9E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickyTest.Infra", "QuickTest.Infra\QuickyTest.Infra.csproj", "{DDC4E235-F764-4069-86DD-C5B9D250E9E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
