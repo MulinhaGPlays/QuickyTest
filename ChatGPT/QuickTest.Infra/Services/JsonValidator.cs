@@ -10,14 +10,14 @@ public partial class JsonValidator
         Dictionary<char, bool> results = new();
         string based = json;
 
-        while (results.Count == 0 || results.Any(x => x.Value)) 
+        do
         {
             Dictionary<char, int> indexes = new();
 
-            bool verify(char c1, char c2) 
-                => (json.Count(x => x == c1) 
-                + json.Count(x => x == c2 && c2 != '"')) % 2 is 1 
-                || json.Count(x => x == c1) 
+            bool verify(char c1, char c2)
+                => (json.Count(x => x == c1)
+                + json.Count(x => x == c2 && c2 != '"')) % 2 is 1
+                || json.Count(x => x == c1)
                 != json.Count(x => x == c2);
 
             foreach (var c in results.Where(x => x.Value is not false))
@@ -25,7 +25,7 @@ public partial class JsonValidator
                 var dic = variants.FirstOrDefault(x => x.Key == c.Key);
                 int calc = c.Key == '"'
                     ? json.Count(x => x == dic.Key) % 2
-                    : json.Count(x => x == dic.Key) 
+                    : json.Count(x => x == dic.Key)
                     - json.Count(x => x == dic.Value);
 
                 if (calc >= 1)
@@ -49,17 +49,7 @@ public partial class JsonValidator
 
             foreach (var variant in variants)
                 results[variant.Key] = verify(variant.Key, variant.Value);
-        }
+        } while (results.Count == 0 || results.Any(x => x.Value));
         return json;
     }
-
-    public static string RemoveSpacesOutsideQuotes(string input)
-    { 
-        Regex regex = RemoveSpacesOutsideQuotes();
-        string result = regex.Replace(input, "");
-        return result;
-    }
-
-    [GeneratedRegex("\\s+(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)")]
-    private static partial Regex RemoveSpacesOutsideQuotes();
 }

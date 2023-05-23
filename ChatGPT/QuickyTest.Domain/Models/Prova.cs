@@ -26,5 +26,5 @@ public class Prova : Json<Prova>
 
     public void SetProvaUUID() => UUID_prova = Guid.NewGuid().ToString();
 
-    public static implicit operator Prova? (string json) => JsonSerializer.Deserialize<Prova>(json);
+    public static implicit operator Prova? (string? json) => JsonSerializer.Deserialize<Prova>(json ?? String.Empty);
 }

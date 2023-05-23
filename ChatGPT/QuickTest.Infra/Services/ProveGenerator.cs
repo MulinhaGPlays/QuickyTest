@@ -44,7 +44,7 @@ public class ProveGenerator
         await foreach (var result in api.ChatEndpoint.StreamCompletionEnumerableAsync(chatRequest))
         {
             Prova? asyncProva = null;
-            json.Append(JsonValidator.RemoveSpacesOutsideQuotes(result.FirstChoice.ToString().Replace("\n", String.Empty)));
+            json.Append(result.FirstChoice.ToString());
             try
             {
                 string validJson = JsonValidator.CloseJson(json.ToString());
