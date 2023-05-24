@@ -19,8 +19,7 @@ public class Prova : Json<Prova>
     public string UUID_usuario { get; set; }
     public string UUID_prova { get; private set; }
 
-    public string Build() 
-        => $"{assunto}{materia}{serie}{nivel}" +
+    public string Build() => $"{assunto}{materia}{serie}{nivel}" +
         $"{String.Join(String.Empty, questoes.Select(x => x.ToRequest()).Where(x => !String.IsNullOrWhiteSpace(x)))}" +
         $"{String.Join(String.Empty, respostas.Select(x => x.ToRequest()).Where(x => !String.IsNullOrWhiteSpace(x)))}";
 

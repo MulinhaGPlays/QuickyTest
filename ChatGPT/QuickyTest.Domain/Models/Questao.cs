@@ -6,7 +6,7 @@ public class Questao
     public object? imagem { get; set; }
     public string? contexto { get; set; }
     public string pergunta { get; set; }
-    public int qtdalternativas { get; set; }
+    public int qtdalternativas { get => alternativas.Count; }
     public List<Alternativa> alternativas { get; set; } = new();
 
     public string ToRequest() => $"{numero_questao}{contexto}{pergunta}{String.Join(String.Empty, alternativas.Select(x => x.ToRequest()).Where(x => !String.IsNullOrWhiteSpace(x)))}";

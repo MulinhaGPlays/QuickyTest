@@ -7,10 +7,9 @@
     "possuicontexto": true,
     "questoes": [
         {
-            "numero_questao": 1,
+            "numero_questao": "1",
             "contexto": "Devido à globalização e à facilidade de comunicação e transportes atualmente, as empresas têm ampliado suas atividades e produção para além das fronteiras nacionais. Essa estratégia é conhecida como internacionalização da produção e busca diversificar mercados, reduzir riscos e aumentar a competitividade.",
             "pergunta": "Qual(is) o(s) objetivo(s) da internacionalização da produção?",
-            "qtdalternativas": 4,
             "alternativas": [
                 {
                     "alternativa": "A",
@@ -33,7 +32,7 @@
     ],
     "respostas": [
         {
-            "numero_questao": 1,
+            "numero_questao": "1",
             "alternativa": "B",
             "explicacao": "A internacionalização da produção busca ampliar o mercado, diversificar os negócios e reduzir riscos."
         }

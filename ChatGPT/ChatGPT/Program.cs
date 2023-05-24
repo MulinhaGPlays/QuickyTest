@@ -68,12 +68,12 @@
 
 //==================================
 
-//using QuickyTest.Infra.Services;
+using QuickyTest.Infra.Services;
 
-//var gerador = new ProveGenerator();
-//Console.ForegroundColor = ConsoleColor.Green;
-//await foreach (string chunk in gerador.GenerateProve())
-//    Console.Write(chunk);
+var gerador = new ProveGenerator();
+Console.ForegroundColor = ConsoleColor.Green;
+await foreach (string chunk in gerador.GenerateProve())
+    Console.Write(chunk);
 
 //==================================
 
@@ -83,41 +83,32 @@
 
 //===================================
 
-using QuickyTest.Domain.Models;
-using QuickyTest.Infra.Services;
-using System.Text;
-using System.Text.Json;
+//using QuickyTest.Domain.Models;
+//using QuickyTest.Infra.Services;
+//using System.Text;
+//using System.Text.Json;
 
-StringBuilder json = new();
+//StringBuilder json = new();
 
-var options = new JsonSerializerOptions
-{
-    PropertyNameCaseInsensitive = true
-};
-
-Console.ForegroundColor = ConsoleColor.Green;
-string text = String.Empty;
-foreach (var result in File.ReadAllText(@$"C:\Users\MulinhaGPlays\Documents\GitHub\QuickyTest\result.txt"))
-{
-    json.Append(result);
-    Prova? asyncProva = null;
-    //try
-    //{
-        string validJson = JsonValidator.CloseJson(json.ToString());
-        //using var stream = new MemoryStream(Encoding.UTF8.GetBytes(validJson));
-        try
-        {
-            //asyncProva = JsonSerializer.Deserialize<Prova>(stream, options);
-            asyncProva = (Prova?)((Prova?)validJson)?.ToString();//JsonSerializer.Deserialize<Prova>(stream, options);
-        }
-        catch { asyncProva = null; }
-        //JsonSerializer.Deserialize<Prova>(json.ToString()); break;
-    //}
-    //catch { }
-    if (asyncProva is not null)
-    {
-        string chunck = asyncProva.Build()[text.Length..];
-        Console.Write(chunck);
-        text += chunck;
-    }
-}
+//Console.ForegroundColor = ConsoleColor.Green;
+//string text = String.Empty;
+//foreach (var result in File.ReadAllText(@$"C:\Users\MulinhaGPlays\Documents\GitHub\QuickyTest\RevolucaoFrancesaComContexto.txt"))
+//{
+//    json.Append(result);
+//    Prova? asyncProva = null;
+//    if (!String.IsNullOrWhiteSpace(json.ToString().Last().ToString()))
+//    {
+//        string validJson = JsonValidator.CloseJson(json.ToString());
+//        try
+//        {
+//            asyncProva = (Prova?)((Prova?)validJson)?.ToString();
+//        }
+//        catch { }
+//    }
+//    if (asyncProva is not null)
+//    {
+//        string chunck = asyncProva.Build()[text.Length..];
+//        Console.Write(chunck);
+//        text += chunck;
+//    }
+//}
