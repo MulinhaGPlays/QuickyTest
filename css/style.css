@@ -1,0 +1,39 @@
+body{
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content{
+    display: none;
+    animation: aparecer 1s ease-in-out;
+}
+
+#loading-screen{
+    display: block;
+    animation: aparecer_e_sumir 2s ease-in-out;
+}
+
+@keyframes aparecer_e_sumir{
+    0% {
+        filter: blur(0px);
+    }
+    100% {
+        filter: blur(2px);
+        opacity: 0;
+    }
+}
+
+@keyframes aparecer{
+    0% {
+        filter: blur(2px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
