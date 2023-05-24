@@ -68,9 +68,24 @@
 
 //==================================
 
+using QuickyTest.Domain.Models;
 using QuickyTest.Infra.Services;
 
 var gerador = new ProveGenerator();
+var prompt = new Prompt
+{
+    assunto = "Pitágoras",
+    materia = "Matemática",
+    serie = "1",
+    nivel = "Ensino Médio",
+    qtdquestoes = 5,
+    possuicontexto = true,
+};
+
+gerador.Build();
+gerador.SetApiKey("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");
+gerador.SetPrompt(prompt);
+
 Console.ForegroundColor = ConsoleColor.Green;
 await foreach (string chunk in gerador.GenerateProve())
     Console.Write(chunk);
