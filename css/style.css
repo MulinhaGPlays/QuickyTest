@@ -9,15 +9,30 @@ body{
 
 #content{
     display: none;
-    animation: aparecer 1s ease-in-out;
+    animation: aparecer 0.75s ease-in-out;
 }
 
-#loading-screen{
-    display: block;
-    animation: aparecer_e_sumir 2s ease-in-out;
+.loading-screen{
+    animation: oscilar 1.5s ease-in-out infinite;
 }
 
-@keyframes aparecer_e_sumir{
+.finalizado{
+    animation: sumir 2s ease-in-out;
+}
+
+@keyframes oscilar{
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes sumir{
     0% {
         filter: blur(0px);
     }
