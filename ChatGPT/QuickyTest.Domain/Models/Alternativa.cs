@@ -6,4 +6,5 @@ public class Alternativa
     public string enunciado { get; set; }
 
     public string ToRequest() => alternativa is null ? String.Empty : $"{alternativa}{enunciado}";
+    public string ToRequestInCompleteModel() => alternativa is null ? String.Empty : $"{alternativa}) {enunciado}";
 }

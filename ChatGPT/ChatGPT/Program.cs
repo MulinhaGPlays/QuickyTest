@@ -74,21 +74,24 @@ using QuickyTest.Infra.Services;
 var gerador = new ProveGenerator();
 var prompt = new Prompt
 {
-    assunto = "Pitágoras",
+    assunto = "Geometria",
     materia = "Matemática",
-    serie = "1",
-    nivel = "Ensino Médio",
-    qtdquestoes = 5,
-    possuicontexto = true,
+    serie = "6",
+    nivel = "Fundamental",
+    qtdquestoes = 1,
+    possuicontexto = false,
 };
 
-gerador.Build();
 gerador.SetApiKey("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");
 gerador.SetPrompt(prompt);
+gerador.Build();
 
-Console.ForegroundColor = ConsoleColor.Green;
-await foreach (string chunk in gerador.GenerateProve())
-    Console.Write(chunk);
+Console.ForegroundColor = ConsoleColor.Red;
+//await foreach (string chunk in gerador.GenerateProveEnumerableAsync())
+//    Console.Write(chunk);
+
+var prova = await gerador.GenerateProveAsync();
+Console.WriteLine("FIM =================");
 
 //==================================
 

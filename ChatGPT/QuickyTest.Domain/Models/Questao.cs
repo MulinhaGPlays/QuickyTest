@@ -10,4 +10,5 @@ public class Questao
     public List<Alternativa> alternativas { get; set; } = new();
 
     public string ToRequest() => $"{numero_questao}{contexto}{pergunta}{String.Join(String.Empty, alternativas.Select(x => x.ToRequest()).Where(x => !String.IsNullOrWhiteSpace(x)))}";
+    public string ToRequestInCompleteModel() => $"{numero_questao} {contexto} {pergunta}{String.Join('\n', alternativas.Select(x => x.ToRequestInCompleteModel()).Where(x => !String.IsNullOrWhiteSpace(x)))}";
 }
