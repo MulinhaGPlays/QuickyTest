@@ -7,5 +7,5 @@ public class Resposta
     public string explicacao { get; set; }
 
     public string ToRequest() => $"{numero_questao}{alternativa}{explicacao}";
-    public string ToRequestInCompleteModel() => $"{numero_questao}: {alternativa}) \nExplicação: {explicacao}";
+    public string ToRequestInCompleteModel() => $"{numero_questao}: {alternativa} \nExplicação: {explicacao}";
 }

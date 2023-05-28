@@ -1,0 +1,4 @@
+- UUID do usuário no arquivo
+- Fazer Enums
+- Criar o banco de dados
+- fazer o front

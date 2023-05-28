@@ -8,7 +8,7 @@ namespace QuickyTest.Domain.Services
         Prova? GetProve();
         void SetApiKey(string key);
         void SetPrompt(Prompt prompt);
-        IAsyncEnumerable<string> GenerateProveEnumerableAsync();
+        IAsyncEnumerable<ChunkModel> GenerateProveEnumerableAsync();
         Task<Prova?> GenerateProveAsync();
     }
 }

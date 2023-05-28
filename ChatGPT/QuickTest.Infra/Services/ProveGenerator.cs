@@ -40,7 +40,7 @@ public class ProveGenerator : IProveGenerator
     public void SetPrompt(Prompt prompt) => _prompt = prompt;
     public Prova? GetProve() => _prove;
 
-    public async IAsyncEnumerable<string> GenerateProveEnumerableAsync()
+    public async IAsyncEnumerable<ChunkModel> GenerateProveEnumerableAsync()
     {
         var chatRequest = new ChatRequest(_chatPrompts, Model.GPT3_5_Turbo);
         string text = String.Empty;
@@ -63,7 +63,11 @@ public class ProveGenerator : IProveGenerator
                 if (asyncProva is not null)
                 {
                     string chunck = asyncProva.Build()[text.Length..];
-                    yield return chunck;
+                    yield return new ChunkModel
+                    { 
+                        Chunk = chunck,
+                        Prove = asyncProva,
+                    };
                     text += chunck;
                 }
             } else if (choice?.FinishReason == "stop" && choice?.Message != null)

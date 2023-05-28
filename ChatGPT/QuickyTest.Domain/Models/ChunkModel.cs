@@ -10,5 +10,6 @@ namespace QuickyTest.Domain.Models
     {
         public string Chunk { get; set; } = String.Empty;
         public Prova Prove { get; set; } = new();
+        public string Status { get; set; } = "LOADING";
     }
 }

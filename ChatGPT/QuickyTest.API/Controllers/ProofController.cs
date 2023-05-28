@@ -26,24 +26,33 @@ namespace QuickyTest.API.Controllers
             if (cookie_do_usuario == null) Response.Cookies.Append("uuid_do_usuario", uuid);
             cookie_do_usuario ??= uuid;
 
-            string guid = Guid.NewGuid().ToString();
             string downloadUrl = $"{Request.Scheme}://{Request.Host}/temp/";
             string archivesPath1 = _webHostEnvironment.WebRootPath;
             if (ModelState.IsValid)
             {
                 if (model.VisualReturn)
                 {
-                    await foreach (string response in _proveGeneratorRepository.BuildAProveEnumerableAsync(model.API_KEY, model.Prompts.First()))
+                    ChunkModel lastChunck = null!;
+                    await foreach (ChunkModel response in _proveGeneratorRepository.BuildAProveEnumerableAsync(model.API_KEY, model.Prompts.First()))
                     {
+                        if (response.Status == "COMPLETE") break;
                         yield return new ResponseProofViewModel
                         {
-                            content = response,
-                            pdfURL = downloadUrl,
-                            wordURL = downloadUrl,
-                            uuid_prova = guid,
+                            content = response.Chunk,
                             uuid_usuario = cookie_do_usuario
                         };
+                        lastChunck = response;
                     }
+                    lastChunck?.Prove.SetUsuarioUUID(cookie_do_usuario);
+                    yield return new ResponseProofViewModel
+                    {
+                        status = lastChunck is null ? "UNDEFINED" : "COMPLETE",
+                        content = lastChunck?.Prove.BuildInCompleteModel(),
+                        pdfURL = $"{downloadUrl}/{lastChunck?.Prove.UUID_prova ?? "undefined"}.pdf",
+                        wordURL = $"{downloadUrl}/{lastChunck?.Prove.UUID_prova ?? "undefined"}.docx",
+                        uuid_prova = lastChunck?.Prove.UUID_prova,
+                        uuid_usuario = lastChunck?.Prove.UUID_usuario,
+                    };
                 }
                 else
                 {

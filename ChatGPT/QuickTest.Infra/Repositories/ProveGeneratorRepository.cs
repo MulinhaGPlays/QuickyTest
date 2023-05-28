@@ -33,11 +33,25 @@ namespace QuickyTest.Infra.Repositories
             return prova;
         }
 
-        public async IAsyncEnumerable<string> BuildAProveEnumerableAsync(string apiKey, Prompt prompt)
+        public async IAsyncEnumerable<ChunkModel> BuildAProveEnumerableAsync(string apiKey, Prompt prompt)
         {
             this.Build(apiKey, prompt);
-            await foreach (string chunk in _context.GenerateProveEnumerableAsync())
+            Prova prova = null!;
+            await foreach (ChunkModel chunk in _context.GenerateProveEnumerableAsync())
+            {
                 yield return chunk;
+                prova = chunk.Prove;
+            }
+            prova.SetProvaUUID();
+            using var file = File.CreateText(Path.Combine(_root, $"{prova?.UUID_prova ?? "UNDEFINED"}.json"));
+            await file.WriteAsync(prova?.ToString());
+            file.Close();
+            yield return new ChunkModel
+            {
+                Chunk = prova!.BuildInCompleteModel(),
+                Prove = prova,
+                Status = "COMPLETE",
+            };
         }
 
         public async Task<Prova?[]> BuildAProvesAsync(string apiKey, List<Prompt> prompts)

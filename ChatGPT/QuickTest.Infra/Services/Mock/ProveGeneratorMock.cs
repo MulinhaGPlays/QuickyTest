@@ -26,7 +26,7 @@ namespace QuickyTest.Infra.Services.Mock
             return prova;
         }
 
-        public async IAsyncEnumerable<string> GenerateProveEnumerableAsync()
+        public async IAsyncEnumerable<ChunkModel> GenerateProveEnumerableAsync()
         {
             string text = String.Empty;
             foreach (var result in await File.ReadAllTextAsync(@$"C:\Users\MulinhaGPlays\Documents\GitHub\QuickyTest\RevolucaoFrancesaComContexto.txt"))
@@ -45,7 +45,11 @@ namespace QuickyTest.Infra.Services.Mock
                 if (asyncProva is not null) 
                 {
                     string chunck = asyncProva.Build()[text.Length..];
-                    yield return result.ToString();
+                    yield return new ChunkModel
+                    {
+                        Chunk = chunck,
+                        Prove = asyncProva,
+                    };
                     text += chunck;
                 }
             }

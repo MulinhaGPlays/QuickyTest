@@ -24,8 +24,8 @@ public class Prova : Json<Prova>
         $"{String.Join(String.Empty, respostas.Select(x => x.ToRequest()).Where(x => !String.IsNullOrWhiteSpace(x)))}";
 
     public string BuildInCompleteModel() => $"{assunto} - {materia} - {nivel}\n\n" +
-    $"{String.Join('\n', questoes.Select(x => x.ToRequestInCompleteModel()).Where(x => !String.IsNullOrWhiteSpace(x)))}" +
-    $"{String.Join('\n', respostas.Select(x => x.ToRequestInCompleteModel()).Where(x => !String.IsNullOrWhiteSpace(x)))}";
+    $"{String.Join(String.Empty, questoes.Select(x => $"\n{x.ToRequestInCompleteModel()}").Where(x => !String.IsNullOrWhiteSpace(x)))}" +
+    $"{String.Join(String.Empty, respostas.Select(x => $"\n{x.ToRequestInCompleteModel()}").Where(x => !String.IsNullOrWhiteSpace(x)))}";
 
     public void SetProvaUUID() => UUID_prova = Guid.NewGuid().ToString();
     public void SetUsuarioUUID(string uuid) => UUID_usuario = uuid;

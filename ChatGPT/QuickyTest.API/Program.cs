@@ -1,6 +1,7 @@
 using QuickyTest.Domain.Repositories;
 using QuickyTest.Domain.Services;
 using QuickyTest.Infra.Repositories;
+using QuickyTest.Infra.Services;
 using QuickyTest.Infra.Services.Mock;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddSingleton<IProveGenerator, ProveGeneratorMock>();
+builder.Services.AddSingleton<IProveGenerator, ProveGenerator>();
 builder.Services.AddTransient<IProveGeneratorRepository, ProveGeneratorRepository>();
 
 builder.Services.AddSwaggerGen();
