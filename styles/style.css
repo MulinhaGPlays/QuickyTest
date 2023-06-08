@@ -15,26 +15,15 @@ body {
   content: " ";
   display: table;
 }
-#messages-main .ms-menu {
-  position: absolute;
-  left: 0;
-  top: 0;
+#messages-main .ms-menu { /*mexi aqui*/
   border-right: 1px solid #eee;
-  padding-bottom: 50px;
-  height: 100%;
   width: 240px;
   background: #fff;
 }
-@media (min-width:768px) {
-  #messages-main .ms-body {
-  padding-left: 240px;
-}
-}@media (max-width:767px) {
+@media (max-width:767px) {
   #messages-main .ms-menu {
-  height: calc(100% - 58px);
   display: none;
   z-index: 1;
-  top: 58px;
 }
 #messages-main .ms-menu.toggled {
   display: block;
@@ -44,30 +33,21 @@ body {
 }
 }
 #messages-main .ms-user {
-  padding: 15px;
   background: #f8f8f8;
 }
-#messages-main .ms-user>div {
+#messages-main .ms-user>div { /*mexi aqui*/
   overflow: hidden;
-  padding: 3px 5px 0 15px;
-  font-size: 11px;
+  font-size: 12px;
 }
 #messages-main #ms-compose {
-  position: fixed;
-  bottom: 120px;
   z-index: 1;
-  right: 30px;
   box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
 }
 #ms-menu-trigger {
   user-select: none;
   position: absolute;
-  left: 0;
-  top: 0;
   width: 50px;
   height: 100%;
-  padding-right: 10px;
-  padding-top: 19px;
 }
 #ms-menu-trigger i {
   font-size: 21px;
@@ -113,9 +93,7 @@ body {
   top: 1px;
 }
 .msb-reply {
-  box-shadow: 0 -20px 20px -5px #fff;
   position: relative;
-  margin-top: 30px;
   border-top: 1px solid #eee;
   background: #f8f8f8;
 }
