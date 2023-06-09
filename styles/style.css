@@ -1,15 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 body {
-  font-family: Roboto,sans-serif;
-  font-size: 13px;
-  line-height: 1.42857143;
-  color: #767676;
-  background-color: #edecec;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  background: url("/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 #messages-main {
   position: relative;
   margin: 0 auto;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 #messages-main:after, #messages-main:before {
   content: " ";
@@ -43,18 +45,6 @@ body {
   z-index: 1;
   box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
 }
-#ms-menu-trigger {
-  user-select: none;
-  position: absolute;
-  width: 50px;
-  height: 100%;
-}
-#ms-menu-trigger i {
-  font-size: 21px;
-}
-#ms-menu-trigger.toggled i:before {
-  content: '\f2ea'
-}
 .fc-toolbar:before, .login-content:after {
   content: ""
 }
@@ -68,37 +58,33 @@ body {
   margin-left: 15px;
 }
 .message-feed:not(.right) .mf-content {
-  background: #03a9f4;
-  color: #fff;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  background: rgba(221,4,4,0.725);
+  color: #ffffff;
 }
 .message-feed.right .mf-content {
-  background: #eee;
+  background: rgba(252, 171, 4, 0.725);
+  color: #000000;
 }
 .mf-content {
   padding: 12px 17px 13px;
-  border-radius: 2px;
+  border-radius: 15px;
   display: inline-block;
-  max-width: 80%
+  max-width: 85%
 }
 .mf-date {
   display: block;
-  color: #B3B3B3;
-  margin-top: 7px;
+  border-radius: 10px;
+  color: #fffffff3;
+  margin-top: 4px;
 }
 .mf-date>i {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 100%;
   position: relative;
   top: 1px;
 }
 .msb-reply {
   position: relative;
-  border-top: 1px solid #eee;
-  background: #f8f8f8;
-}
-.four-zero, .lc-block {
-  box-shadow: 0 1px 11px rgba(0, 0, 0, .27);
 }
 .msb-reply textarea {
   width: 100%;
@@ -107,7 +93,6 @@ body {
   padding: 10px 15px;
   resize: none;
   height: 60px;
-  background: 0 0;
 }
 .msb-reply button {
   position: absolute;
@@ -185,7 +170,8 @@ body {
   text-align: right;
 }
 .messages-container{
-  overflow-y: scroll;
+  overflow-y: auto;
+  height: 77vh;
 }
 
 #content{
@@ -233,4 +219,32 @@ body {
     opacity: 1;
     filter: blur(0px);
   }
+}
+
+/* Estilizando a barra de rolagem horizontal */
+::-webkit-scrollbar {
+  height: 10px; /* Altura da barra de rolagem */
+}
+
+/* Estilizando o rastreador da barra de rolagem horizontal */
+::-webkit-scrollbar-track {
+  background: #ffffff4d; /* Cor do rastreador */
+  border-radius: 10px;
+  margin: 7px 0 7px 0;
+}
+
+/* Estilizando o polegar da barra de rolagem horizontal */
+::-webkit-scrollbar-thumb {
+  background: #46464691; /* Cor do polegar */
+  mix-blend-mode: luminosity;
+  border-radius: 10px;
+  margin: 7px 0 7px 0;
+}
+
+/* Estilizando o polegar da barra de rolagem horizontal quando estiver em hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1a1a1a7e; /* Cor do polegar em hover */
+  border-radius: 10px;
+  mix-blend-mode: luminosity;
+  margin: 7px 0 7px 0;
 }

@@ -27,12 +27,19 @@
         <img src="images/Logo-QuickyTest.png" class="img-fluid" />
       </div>
     </div>
-    <div id="content" class="bg-black" style="height: 100vh;">
-      <div class="action-header clearfix">
-        <div class="d-lg-none d-flex justify-content-center mt-1"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive" id="ms-menu-trigger">
-          <i class="fa fa-bars"></i>
+    <div id="content" style="height: 100vh;">
+      <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
+        <div class="offcanvas-body">
+          <p>Try scrolling the rest of the page to see this option in action.</p>
+        </div>
+      </div>
+      <div class="action-header clearfix">
         <div class="hidden-xs d-flex justify-content-center">
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>
           <img
             src="images/Logo-QuickyTest-Horizontal.png"
             alt="QuickyTest"
@@ -42,305 +49,90 @@
         </div>
       </div>
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-3" style="background-color: aquamarine;">
-            <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
-              <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Responsive offcanvas</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body">
-                <p class="mb-0">This is content within an <code>.offcanvas-lg</code>.</p>
+        <div class="container-fluid messages-container" style="max-height: 77vh;overflow-y: scroll;">
+          <div class="message-feed media">
+            <div class="media-body">
+              <div class="mf-content">
+                Quisque consequat arcu eget odio cursus, ut tempor arcu
+                vestibulum. Etiam ex arcu, porta a urna non, lacinia
+                pellentesque orci. Proin semper sagittis erat, eget condimentum
+                sapien viverra et. Mauris volutpat magna nibh, et condimentum
+                est rutrum a. Nunc sed turpis mi. In eu massa a sem pulvinar
+                lobortis.
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="container-fluid messages-container" style="max-height: 77vh;overflow-y: scroll;">
-              <div class="message-feed media">
-                <div class="pull-left">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                    alt=""
-                    class="img-avatar"
-                  />
-                </div>
-                <div class="media-body">
-                  <div class="mf-content">
-                    Quisque consequat arcu eget odio cursus, ut tempor arcu
-                    vestibulum. Etiam ex arcu, porta a urna non, lacinia
-                    pellentesque orci. Proin semper sagittis erat, eget condimentum
-                    sapien viverra et. Mauris volutpat magna nibh, et condimentum
-                    est rutrum a. Nunc sed turpis mi. In eu massa a sem pulvinar
-                    lobortis.
-                  </div>
-                  <small class="mf-date"
-                    ><i class="fa fa-clock-o"></i> 20/02/2015 at 09:00</small
-                  >
-                </div>
+          <div class="message-feed right">
+            <div class="media-body">
+              <div class="mf-content">
+                Mauris volutpat magna nibh, et condimentum est rutrum a. Nunc
+                sed turpis mi. In eu massa a sem pulvinar lobortis.
               </div>
-              <div class="message-feed right">
-                <div class="pull-right">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                    alt=""
-                    class="img-avatar"
-                  />
-                </div>
-                <div class="media-body">
-                  <div class="mf-content">
-                    Mauris volutpat magna nibh, et condimentum est rutrum a. Nunc
-                    sed turpis mi. In eu massa a sem pulvinar lobortis.
-                  </div>
-                  <small class="mf-date"
-                    ><i class="fa fa-clock-o"></i> 20/02/2015 at 09:30</small
-                  >
-                </div>
+            </div>
+          </div>
+          <div class="message-feed media">
+            <div class="media-body">
+              <div class="mf-content">
+                Quisque consequat arcu eget odio cursus, ut tempor arcu
+                vestibulum. Etiam ex arcu, porta a urna non, lacinia
+                pellentesque orci. Proin semper sagittis erat, eget condimentum
+                sapien viverra et. Mauris volutpat magna nibh, et condimentum
+                est rutrum a. Nunc sed turpis mi. In eu massa a sem pulvinar
+                lobortis.
               </div>
-              <div class="message-feed media">
-                <div class="pull-left">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                    alt=""
-                    class="img-avatar"
-                  />
-                </div>
-                <div class="media-body">
-                  <div class="mf-content">
-                    Quisque consequat arcu eget odio cursus, ut tempor arcu
-                    vestibulum. Etiam ex arcu, porta a urna non, lacinia
-                    pellentesque orci. Proin semper sagittis erat, eget condimentum
-                    sapien viverra et. Mauris volutpat magna nibh, et condimentum
-                    est rutrum a. Nunc sed turpis mi. In eu massa a sem pulvinar
-                    lobortis.
-                  </div>
-                  <small class="mf-date"
-                    ><i class="fa fa-clock-o"></i> 20/02/2015 at 09:00</small
-                  >
-                </div>
+            </div>
+          </div>
+          <div class="message-feed right">
+            <div class="media-body">
+              <div class="mf-content">
+                Mauris volutpat magna nibh, et condimentum est rutrum a. Nunc
+                sed turpis mi. In eu massa a sem pulvinar lobortis.
               </div>
-              <div class="message-feed right">
-                <div class="pull-right">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                    alt=""
-                    class="img-avatar"
-                  />
-                </div>
-                <div class="media-body">
-                  <div class="mf-content">
-                    Mauris volutpat magna nibh, et condimentum est rutrum a. Nunc
-                    sed turpis mi. In eu massa a sem pulvinar lobortis.
-                  </div>
-                  <small class="mf-date"
-                    ><i class="fa fa-clock-o"></i> 20/02/2015 at 09:30</small
-                  >
-                </div>
+            </div>
+          </div>
+          <div class="message-feed media">
+            <div class="media-body">
+              <div class="mf-content">
+                Quisque consequat arcu eget odio cursus, ut tempor arcu
+                vestibulum. Etiam ex arcu, porta a urna non, lacinia
+                pellentesque orci. Proin semper sagittis erat, eget condimentum
+                sapien viverra et. Mauris volutpat magna nibh, et condimentum
+                est rutrum a. Nunc sed turpis mi. In eu massa a sem pulvinar
+                lobortis.
               </div>
-              <div class="message-feed media">
-                <div class="pull-left">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                    alt=""
-                    class="img-avatar"
-                  />
-                </div>
-                <div class="media-body">
-                  <div class="mf-content">
-                    Quisque consequat arcu eget odio cursus, ut tempor arcu
-                    vestibulum. Etiam ex arcu, porta a urna non, lacinia
-                    pellentesque orci. Proin semper sagittis erat, eget condimentum
-                    sapien viverra et. Mauris volutpat magna nibh, et condimentum
-                    est rutrum a. Nunc sed turpis mi. In eu massa a sem pulvinar
-                    lobortis.
-                  </div>
-                  <small class="mf-date"
-                    ><i class="fa fa-clock-o"></i> 20/02/2015 at 09:00</small
-                  >
-                </div>
+            </div>
+          </div>
+          <div class="message-feed right">
+            <div class="media-body">
+              <div class="mf-content">
+                Mauris volutpat magna nibh, et condimentum est rutrum a. Nunc
+                sed turpis mi. In eu massa a sem pulvinar lobortis.
               </div>
-              <div class="message-feed right">
-                <div class="pull-right">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                    alt=""
-                    class="img-avatar"
-                  />
-                </div>
-                <div class="media-body">
-                  <div class="mf-content">
-                    Mauris volutpat magna nibh, et condimentum est rutrum a. Nunc
-                    sed turpis mi. In eu massa a sem pulvinar lobortis.
-                  </div>
-                  <small class="mf-date"
-                    ><i class="fa fa-clock-o"></i> 20/02/2015 at 09:30</small
-                  >
-                </div>
+            </div>
+          </div>
+          <div class="message-feed media">
+            <div class="media-body">
+              <div class="mf-content">
+                Quisque consequat arcu eget odio cursus, ut tempor arcu
+                vestibulum. Etiam ex arcu, porta a urna non, lacinia
+                pellentesque orci. Proin semper sagittis erat, eget condimentum
+                sapien viverra et. Mauris volutpat magna nibh, et condimentum
+                est rutrum a. Nunc sed turpis mi. In eu massa a sem pulvinar
+                lobortis.
               </div>
-              <div class="message-feed media">
-                <div class="pull-left">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                    alt=""
-                    class="img-avatar"
-                  />
-                </div>
-                <div class="media-body">
-                  <div class="mf-content">
-                    Quisque consequat arcu eget odio cursus, ut tempor arcu
-                    vestibulum. Etiam ex arcu, porta a urna non, lacinia
-                    pellentesque orci. Proin semper sagittis erat, eget condimentum
-                    sapien viverra et. Mauris volutpat magna nibh, et condimentum
-                    est rutrum a. Nunc sed turpis mi. In eu massa a sem pulvinar
-                    lobortis.
-                  </div>
-                  <small class="mf-date"
-                    ><i class="fa fa-clock-o"></i> 20/02/2015 at 09:00</small
-                  >
-                </div>
-              </div>
-              <div class="message-feed right">
-                <div class="pull-right">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                    alt=""
-                    class="img-avatar"
-                  />
-                </div>
-                <div class="media-body">
-                  <div class="mf-content">
-                    Mauris volutpat magna nibh, et condimentum est rutrum a. Nunc
-                    sed turpis mi. In eu massa a sem pulvinar lobortis.
-                  </div>
-                  <small class="mf-date"
-                    ><i class="fa fa-clock-o"></i> 20/02/2015 at 09:30</small
-                  >
-                </div>
-              </div>
-              <div class="message-feed media">
-                <div class="pull-left">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                    alt=""
-                    class="img-avatar"
-                  />
-                </div>
-                <div class="media-body">
-                  <div class="mf-content">
-                    Quisque consequat arcu eget odio cursus, ut tempor arcu
-                    vestibulum. Etiam ex arcu, porta a urna non, lacinia
-                    pellentesque orci. Proin semper sagittis erat, eget condimentum
-                    sapien viverra et. Mauris volutpat magna nibh, et condimentum
-                    est rutrum a. Nunc sed turpis mi. In eu massa a sem pulvinar
-                    lobortis.
-                  </div>
-                  <small class="mf-date"
-                    ><i class="fa fa-clock-o"></i> 20/02/2015 at 09:00</small
-                  >
-                </div>
-              </div>
-              <div class="message-feed right">
-                <div class="pull-right">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                    alt=""
-                    class="img-avatar"
-                  />
-                </div>
-                <div class="media-body">
-                  <div class="mf-content">
-                    Mauris volutpat magna nibh, et condimentum est rutrum a. Nunc
-                    sed turpis mi. In eu massa a sem pulvinar lobortis.
-                  </div>
-                  <small class="mf-date"
-                    ><i class="fa fa-clock-o"></i> 20/02/2015 at 09:30</small
-                  >
-                </div>
-              </div>
-              <div class="message-feed media">
-                <div class="pull-left">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                    alt=""
-                    class="img-avatar"
-                  />
-                </div>
-                <div class="media-body">
-                  <div class="mf-content">
-                    Quisque consequat arcu eget odio cursus, ut tempor arcu
-                    vestibulum. Etiam ex arcu, porta a urna non, lacinia
-                    pellentesque orci. Proin semper sagittis erat, eget condimentum
-                    sapien viverra et. Mauris volutpat magna nibh, et condimentum
-                    est rutrum a. Nunc sed turpis mi. In eu massa a sem pulvinar
-                    lobortis.
-                  </div>
-                  <small class="mf-date"
-                    ><i class="fa fa-clock-o"></i> 20/02/2015 at 09:00</small
-                  >
-                </div>
-              </div>
-              <div class="message-feed right">
-                <div class="pull-right">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                    alt=""
-                    class="img-avatar"
-                  />
-                </div>
-                <div class="media-body">
-                  <div class="mf-content">
-                    Mauris volutpat magna nibh, et condimentum est rutrum a. Nunc
-                    sed turpis mi. In eu massa a sem pulvinar lobortis.
-                  </div>
-                  <small class="mf-date"
-                    ><i class="fa fa-clock-o"></i> 20/02/2015 at 09:30</small
-                  >
-                </div>
-              </div>
-              <div class="message-feed media">
-                <div class="pull-left">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                    alt=""
-                    class="img-avatar"
-                  />
-                </div>
-                <div class="media-body">
-                  <div class="mf-content">
-                    Quisque consequat arcu eget odio cursus, ut tempor arcu
-                    vestibulum. Etiam ex arcu, porta a urna non, lacinia
-                    pellentesque orci. Proin semper sagittis erat, eget condimentum
-                    sapien viverra et. Mauris volutpat magna nibh, et condimentum
-                    est rutrum a. Nunc sed turpis mi. In eu massa a sem pulvinar
-                    lobortis.
-                  </div>
-                  <small class="mf-date"
-                    ><i class="fa fa-clock-o"></i> 20/02/2015 at 09:00</small
-                  >
-                </div>
-              </div>
-              <div class="message-feed right">
-                <div class="pull-right">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                    alt=""
-                    class="img-avatar"
-                  />
-                </div>
-                <div class="media-body">
-                  <div class="mf-content">
-                    Mauris volutpat magna nibh, et condimentum est rutrum a. Nunc
-                    sed turpis mi. In eu massa a sem pulvinar lobortis.
-                  </div>
-                  <small class="mf-date"
-                    ><i class="fa fa-clock-o"></i> 20/02/2015 at 09:30</small
-                  >
-                </div>
+            </div>
+          </div>
+          <div class="message-feed right">
+            <div class="media-body">
+              <div class="mf-content">
+                Mauris volutpat magna nibh, et condimentum est rutrum a. Nunc
+                sed turpis mi. In eu massa a sem pulvinar lobortis.
               </div>
             </div>
           </div>
         </div>
         <div class="msb-reply">
-          <textarea placeholder="What's on your mind..."></textarea>
+          <textarea class="form-control" placeholder="What's on your mind..."></textarea>
           <button><i class="fa fa-paper-plane-o"></i></button>
         </div>
       </div>
