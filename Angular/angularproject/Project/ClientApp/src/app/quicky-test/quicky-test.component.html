@@ -1,0 +1,35 @@
+<div id="content" class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div id="center-text">
+    <h2>Quicky Test</h2>
+    <p>Message send and scroll to bottom enabled</p>
+  </div>
+  <div id="body">
+
+    <div id="chat-circle" class="btn btn-raised">
+      <div id="chat-overlay"></div>
+      <i class="material-icons"><img src="../../assets/images/conversation.png" class="img-fluid" /></i>
+    </div>
+
+    <div class="chat-box">
+      <div class="chat-box-header">
+        <span class="chat-box-toggle">Fechar</span>
+      </div>
+      <div class="chat-box-body">
+        <div class="chat-box-overlay">
+        </div>
+        <div class="chat-logs">
+
+        </div>
+      </div>
+      <div class="chat-input">
+        <button (click)="addProve()">Adicionar Prova</button>
+        <app-prompt-model *ngFor="let prompt of prompts" [prompt]="prompt"></app-prompt-model>
+
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+          <label class="form-check-label" for="flexSwitchCheckChecked">Retorno Visual</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

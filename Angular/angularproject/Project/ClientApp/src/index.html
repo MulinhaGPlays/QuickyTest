@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <base href="/" />
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+  <link rel="icon" type="image/x-icon" href="assets/images/Icone-QuickyTest.ico" />
+  <title>QuickyTest - Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:title" content="QuickyTest - Seu chat que gera qualquer prova!" />
+  <meta property="og:description" content="Um ChatGPT para provas" />
+  <meta property="og:image" content="https://user-images.githubusercontent.com/83516034/244410905-8be65c88-88fb-487b-862a-959fafecb762.png" />
+</head>
+<body>
+
+  <app-root></app-root>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+          integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+          integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+          crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      var INDEX = 0;
+      $("#chat-submit").click(function (e) {
+        e.preventDefault();
+        var msg = $("#chat-input").val();
+        if (msg.trim() == '') {
+          return false;
+        }
+        generate_message(msg, 'self');
+        var buttons = [
+          {
+            name: 'Existing User',
+            value: 'existing'
+          },
+          {
+            name: 'New User',
+            value: 'new'
+          }
+        ];
+        setTimeout(function () {
+          generate_message(msg, 'user');
+        }, 1000)
+
+      })
+
+      function generate_message(msg, type) {
+        INDEX++;
+        var str = "";
+        str += "<div id='cm-msg-" + INDEX + "' class=\"chat-msg " + type + "\">";
+        str += "          <span class=\"msg-avatar\">";
+        str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
+        str += "          <\/span>";
+        str += "          <div class=\"cm-msg-text\">";
+        str += msg;
+        str += "          <\/div>";
+        str += "        <\/div>";
+        $(".chat-logs").append(str);
+        $("#cm-msg-" + INDEX).hide().fadeIn(300);
+        if (type == 'self') {
+          $("#chat-input").val('');
+        }
+        $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
+      }
+
+      function generate_button_message(msg, buttons) {
+        INDEX++;
+        var btn_obj = buttons.map(function (button) {
+          return "              <li class=\"button\"><a href=\"javascript:;\" class=\"btn btn-primary chat-btn\" chat-value=\"" + button.value + "\">" + button.name + "<\/a><\/li>";
+        }).join('');
+        var str = "";
+        str += "<div id='cm-msg-" + INDEX + "' class=\"chat-msg user\">";
+        str += "          <span class=\"msg-avatar\">";
+        str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
+        str += "          <\/span>";
+        str += "          <div class=\"cm-msg-text\">";
+        str += msg;
+        str += "          <\/div>";
+        str += "          <div class=\"cm-msg-button\">";
+        str += "            <ul>";
+        str += btn_obj;
+        str += "            <\/ul>";
+        str += "          <\/div>";
+        str += "        <\/div>";
+        $(".chat-logs").append(str);
+        $("#cm-msg-" + INDEX).hide().fadeIn(300);
+        $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
+        $("#chat-input").attr("disabled", true);
+      }
+
+      $(document).delegate(".chat-btn", "click", function () {
+        var value = $(this).attr("chat-value");
+        var name = $(this).html();
+        $("#chat-input").attr("disabled", false);
+        generate_message(name, 'self');
+      })
+
+      $("#chat-circle").click(function () {
+        $("#chat-circle").toggle('scale');
+        $(".chat-box").toggle('scale');
+      })
+
+      $(".chat-box-toggle").click(function () {
+        $("#chat-circle").toggle('scale');
+        $(".chat-box").toggle('scale');
+      })
+    })
+  </script>
+
+</body>
+</html>
