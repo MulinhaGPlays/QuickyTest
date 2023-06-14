@@ -97,7 +97,8 @@
 #chat-input {
   background: #f4f7f9;
   width: 100%;
-  position: relative;
+  margin-bottom: 0;
+  max-height: 325px;
   height: 47px;
   padding-top: 10px;
   padding-right: 50px;
@@ -111,7 +112,7 @@
   border-top: none;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .chat-input > form {
@@ -225,4 +226,9 @@
 
 #content {
   animation: aparecer 0.75s ease-in-out;
+}
+
+.list-of-proofs{
+  max-height: 220px;
+  overflow-y: scroll;
 }

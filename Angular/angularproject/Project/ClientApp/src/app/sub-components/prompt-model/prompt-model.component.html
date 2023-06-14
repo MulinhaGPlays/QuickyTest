@@ -1,26 +1,57 @@
-<div class="accordion" id="accordionPanelsStayOpenExample">
+<div class="accordion mt-2" id="accordionPanelsStayOpenExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
-        {{prompt.materia}} - {{prompt.assunto}} | Status: <strong [ngStyle]="{'color': confirmed ? 'green' : 'red' }">{{ confirmed ? 'Confirmado' : 'Não Confirmado' }}</strong>
+      <button class="accordion-button" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-controls="panelsStayOpen-collapseOne">
+        {{ !prompt.materia.trim() && !prompt.assunto.trim() ? 'Prova não definida' : prompt.materia + (!prompt.assunto.trim() ? '' : ' - ' ) + prompt.assunto }} |&nbsp;<span [ngStyle]="{'color': confirmed ? 'green' : 'red' }">{{ confirmed ? 'Confirmado' : 'Não Confirmado' }}</span>
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
-      <div class="accordion-body">
-        <input class="form-control" value="{{prompt.materia}}" type="text" placeholder="Materia" aria-label="Materia" (input)="changeMateria($event)">
-        <input class="form-control" value="{{prompt.assunto}}" type="text" placeholder="Assunto" aria-label="Assunto" (input)="changeAssunto($event)">
-        <input class="form-control" value="{{prompt.nivel}}" type="text" placeholder="Nivel" aria-label="Nivel" (input)="changeNivel($event)">
-        <input class="form-control" value="{{prompt.serie}}" type="text" placeholder="Serie" aria-label="Serie" (input)="changeSerie($event)">
-        <label for="qtd" class="form-label">Quantidade de questoes: {{prompt.qtdquestoes}}</label>
-        <input type="range" class="form-range" value="{{prompt.qtdquestoes}}" min="1" max="10" id="qtd" (input)="changeQtdQuestoes($event)">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" [(ngModel)]="prompt.possuicontexto" value="" id="flexCheckDefault" (input)="changePossuiContexto($event)">
-          <label class="form-check-label" for="flexCheckDefault">Contexto</label>
+    <div class="modal  fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">{{ !prompt.materia.trim() && !prompt.assunto.trim() ? 'Prova não definida' : prompt.materia + (!prompt.assunto.trim() ? '' : ' - ' ) + prompt.assunto }} |&nbsp;<span [ngStyle]="{'color': confirmed ? 'green' : 'red' }">{{ confirmed ? 'Confirmado' : 'Não Confirmado' }}</span></h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container text-center">
+              <div class="row">
+                <label for="qtd" class="form-label">Quantidade de questões: {{prompt.qtdquestoes}}</label>
+                <div class="col">
+                  <input [(ngModel)]="prompt.qtdquestoes" type="range" class="form-range" min="1" max="10" id="qtd">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <input [(ngModel)]="prompt.materia" class="form-control" type="text" placeholder="Materia" aria-label="Materia">
+                </div>
+                <div class="col">
+                  <input [(ngModel)]="prompt.assunto" class="form-control" type="text" placeholder="Assunto" aria-label="Assunto">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col">
+                  <input [(ngModel)]="prompt.nivel" class="form-control" type="text" placeholder="Nivel" aria-label="Nivel">
+                </div>
+                <div class="col">
+                  <input [(ngModel)]="prompt.serie" class="form-control" type="text" placeholder="Serie" aria-label="Serie">
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col text-start d-flex align-items-center">
+                  <div class="form-check">
+                    <input [(ngModel)]="prompt.possuicontexto" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">Contexto</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary" *ngIf="!confirmed" (click)="Confirm()">Confirmar</button>
+            <button type="button" class="btn btn-danger" *ngIf="confirmed" (click)="Confirm()">Cancelar</button>
+          </div>
         </div>
-        <button type="button" class="btn btn-primary" *ngIf="!confirmed; else btnDisconfirm" (click)="emitValue()">Confirmar</button>
-        <ng-template #btnDisconfirm>
-          <button type="button" class="btn btn-danger" (click)="emitValue()">Cancelar</button>
-        </ng-template>
       </div>
     </div>
   </div>

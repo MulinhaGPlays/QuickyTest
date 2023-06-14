@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center align-items-center h-100">
-  <div id="loading-screen" class="loading-screen" [ngClass]="{'finalizado': finish}" [ngStyle]="{'display': content ? 'none' : 'block'}">
+  <div id="loading-screen" class="loading-screen" *ngIf="!content" [ngClass]="{'finalizado': finish}">
     <img src="../assets/images/Logo-QuickyTest.png" class="img-fluid" />
   </div>
   <app-quicky-test [ngStyle]="{'display': content ? 'block' : 'none'}"></app-quicky-test>

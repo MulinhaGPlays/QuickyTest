@@ -1,17 +1,18 @@
 <div id="content" class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
   <div id="center-text">
-    <h2>Quicky Test</h2>
+    <h1>Quicky Test</h1>
     <p>Message send and scroll to bottom enabled</p>
   </div>
   <div id="body">
-
     <div id="chat-circle" class="btn btn-raised">
       <div id="chat-overlay"></div>
       <i class="material-icons"><img src="../../assets/images/conversation.png" class="img-fluid" /></i>
     </div>
-
     <div class="chat-box">
       <div class="chat-box-header">
+        <div>
+          <input class="form-control" type="text" placeholder="Chave API" aria-label="Chave API">
+        </div>
         <span class="chat-box-toggle">Fechar</span>
       </div>
       <div class="chat-box-body">
@@ -22,12 +23,30 @@
         </div>
       </div>
       <div class="chat-input">
-        <button (click)="addProve()">Adicionar Prova</button>
-        <app-prompt-model *ngFor="let prompt of prompts" [prompt]="prompt"></app-prompt-model>
-  
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-          <label class="form-check-label" for="flexSwitchCheckChecked">Retorno Visual</label>
+        <div class="container-fluid d-flex mt-2">
+          <div class="row">
+            <div class="row">
+              <div class="d-flex align-items-center">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                  <label class="form-check-label" for="flexSwitchCheckChecked">Retorno Visual&nbsp;<small>( Apenas uma prova )</small></label>
+                </div>
+              </div>
+            </div>
+            <div class="container-fluid d-flex justify-content-between">
+              <div class="col-6">
+                <button class="btn btn-info position-relative" (click)="addProve()">
+                  Adicionar Prova <span class="badge text-bg-success">{{ qtdConfirm }}</span>&nbsp;<span class="badge text-bg-danger">{{ qtdNotConfirm }}</span>
+                </button>
+              </div>
+              <div class="col-2">
+                <button class="btn btn-success" (click)="verProvas()">Enviar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid mt-2 list-of-proofs">
+          <app-prompt-model *ngFor="let prompt of proofModel.Prompts" [prompt]="prompt" (status)="receberAviso()"></app-prompt-model>
         </div>
       </div>
     </div>

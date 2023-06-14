@@ -7,32 +7,15 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class PromptModelComponent {
-  public confirmed: boolean = false;
+  confirmed: boolean = false;
 
   @Input() prompt!: PromptModel;
+  @Output() status: EventEmitter<boolean> = new EventEmitter();
 
-  emitValue() {
+  Confirm() {
     this.confirmed = !this.confirmed;
-    console.log(this.prompt);
-  }
-
-  changeAssunto(event: any): void {
-    this.prompt.assunto = event.target.value;
-  }
-  changeMateria(event: any): void {
-    this.prompt.materia = event.target.value;
-  }
-  changeSerie(event: any): void {
-    this.prompt.serie = event.target.value;
-  }
-  changeNivel(event: any): void {
-    this.prompt.nivel = event.target.value;
-  }
-  changeQtdQuestoes(event: any): void {
-    this.prompt.qtdquestoes = event.target.value;
-  }
-  changePossuiContexto(event: any): void {
-    this.prompt.possuicontexto = event.checked;
+    this.prompt.confirmado = this.confirmed;
+    this.status.emit();
   }
 }
 
@@ -44,6 +27,7 @@ export class PromptModel {
   nivel: string;
   qtdquestoes: number;
   possuicontexto: boolean;
+  confirmado: boolean;
 
   constructor()
   {
@@ -53,5 +37,6 @@ export class PromptModel {
     this.nivel = "";
     this.qtdquestoes = 10;
     this.possuicontexto = false;
+    this.confirmado = false;
   }
 }
