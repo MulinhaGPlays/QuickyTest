@@ -11,6 +11,6 @@ export class QuickyTestComponent {
 
   addProve() {
     let prompt = new PromptModel();
-    this.prompts.push(prompt)
+    this.prompts.push(prompt);
   }
 }

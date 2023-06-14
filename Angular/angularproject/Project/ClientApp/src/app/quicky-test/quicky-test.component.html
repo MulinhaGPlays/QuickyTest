@@ -24,7 +24,7 @@
       <div class="chat-input">
         <button (click)="addProve()">Adicionar Prova</button>
         <app-prompt-model *ngFor="let prompt of prompts" [prompt]="prompt"></app-prompt-model>
-
+  
         <div class="form-check form-switch">
           <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
           <label class="form-check-label" for="flexSwitchCheckChecked">Retorno Visual</label>

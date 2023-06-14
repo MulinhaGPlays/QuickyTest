@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-prompt-model',
@@ -7,7 +7,14 @@ import { Component, Input } from '@angular/core';
 })
 
 export class PromptModelComponent {
+  public confirmed: boolean = false;
+
   @Input() prompt!: PromptModel;
+
+  emitValue() {
+    this.confirmed = !this.confirmed;
+    console.log(this.prompt);
+  }
 
   changeAssunto(event: any): void {
     this.prompt.assunto = event.target.value;

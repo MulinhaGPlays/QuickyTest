@@ -23,6 +23,6 @@ import { PromptModelComponent } from './sub-components/prompt-model/prompt-model
     ])
   ],
   providers: [],
-  bootstrap: [AppComponent, QuickyTestComponent]
+  bootstrap: [AppComponent, QuickyTestComponent, PromptModelComponent]
 })
 export class AppModule { }
