@@ -8,18 +8,22 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export class PromptModelComponent {
   confirmed: boolean = false;
+  opened: boolean = false;
 
   @Input() prompt!: PromptModel;
   @Output() status: EventEmitter<boolean> = new EventEmitter();
   @Output() delete: EventEmitter<number> = new EventEmitter();
 
-  Confirm() {
+  Confirm(): void {
     this.confirmed = !this.confirmed;
     this.prompt.confirmado = this.confirmed;
     this.status.emit();
   }
-  Delete() {
+  Delete(): void {
     this.delete.emit(this.prompt.id);
+  }
+  OpenModal(): void {
+    this.opened = !this.opened;
   }
 }
 

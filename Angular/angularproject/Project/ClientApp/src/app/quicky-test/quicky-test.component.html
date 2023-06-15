@@ -1,51 +1,43 @@
 <div id="content" class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
-  <div id="center-text">
-    <h1>Quicky Test</h1>
-    <p>Message send and scroll to bottom enabled</p>
-  </div>
-  <div id="body">
-    <div id="chat-circle" class="btn btn-raised">
-      <div id="chat-overlay"></div>
-      <i class="material-icons"><img src="../../assets/images/conversation.png" class="img-fluid" /></i>
+  <div class="container-fluid">
+    <div class="row fixed-top mt-4 mx-2">
+      <div class="col d-flex justify-content-center">
+        <app-visual-proof [gerando]="generating"></app-visual-proof>
+      </div>
     </div>
-    <div class="chat-box">
-      <div class="chat-box-header">
-        <div>
-          <input [(ngModel)]="proofModel.API_KEY" class="form-control" type="text" placeholder="Chave API" aria-label="Chave API">
-        </div>
-        <span class="chat-box-toggle">Fechar</span>
+  </div>
+  <div (click)="toggleOffCanvas()" id="chat-circle" class="btn btn-raised">
+    <div id="chat-overlay"></div>
+    <i class="material-icons"><img src="../../assets/images/conversation.png" class="img-fluid" /></i>
+  </div>
+  <div class="offcanvas offcanvas-end" [class]="{'show': showOffCanvas}" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+      <div class="col">
+        <input [(ngModel)]="proofModel.API_KEY" class="form-control" type="text" placeholder="Chave API" aria-label="Chave API">
       </div>
-      <div class="chat-box-body">
-        <div class="chat-box-overlay">
-        </div>
-        <div class="chat-logs">
-
-        </div>
+      <div class="mx-2">
+        <button (click)="toggleOffCanvas()" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="chat-input">
-        <div class="container-fluid d-flex mt-2">
-          <div class="row">
-            <div class="row">
-              <div class="d-flex align-items-center">
-                <div class="form-check form-switch">
-                  <input [(ngModel)]="proofModel.VisualReturn" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
-                  <label class="form-check-label" for="flexSwitchCheckChecked">Retorno Visual&nbsp;<small>( Apenas uma prova )</small></label>
-                </div>
-              </div>
-            </div>
-            <div class="container-fluid d-flex justify-content-between">
-              <div class="col-6">
-                <button class="btn btn-info position-relative" (click)="addProve()">
-                  Adicionar Prova <span class="badge text-bg-success">{{ qtdConfirm }}</span>&nbsp;<span class="badge text-bg-danger">{{ qtdNotConfirm }}</span>
-                </button>
-              </div>
-              <div class="col">
-                <button class="btn btn-success" (click)="verProvas()">Enviar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container-fluid mt-2 list-of-proofs">
+    </div>
+    <div class="offcanvas-header">
+      <div class="col">
+        <button class="btn btn-info position-relative" (click)="addProve()">
+          Adicionar Prova <span class="badge text-bg-success">{{ qtdConfirm }}</span>&nbsp;<span class="badge text-bg-danger">{{ qtdNotConfirm }}</span>
+        </button>
+      </div>
+      <div class="col-2 d-flex align-items-center justify-content-end">
+        <button class="btn btn-success" (click)="verProvas()">Enviar</button>
+      </div>
+    </div>
+    <div class="offcanvas-header">
+      <div class="form-check form-switch">
+        <input [(ngModel)]="proofModel.VisualReturn" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+        <label class="form-check-label" for="flexSwitchCheckChecked">Retorno Visual&nbsp;<small>( Apenas uma prova )</small></label>
+      </div>
+    </div>
+    <div class="offcanvas-body">
+      <div class="row">
+        <div class="container-fluid">
           <app-prompt-model *ngFor="let prompt of proofModel.Prompts" [prompt]="prompt" (delete)="deleteProof($event)" (status)="receberAviso()"></app-prompt-model>
         </div>
       </div>

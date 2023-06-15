@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { PromptModel } from '../sub-components/prompt-model/prompt-model.component';
 import { HttpClient } from '@angular/common/http'
 
@@ -9,16 +9,35 @@ import { HttpClient } from '@angular/common/http'
 })
 export class QuickyTestComponent {
   proofModel: ProofModel = new ProofModel();
+  http: HttpClient;
+  baseUrl: string;
+
   qtdConfirm: number = 0;
   qtdNotConfirm: number = 0;
+  showOffCanvas: boolean = false;
+  generating: boolean = false;
 
-  addProve() {
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    this.http = http;
+    this.baseUrl = baseUrl;
+    this.http.get(this.baseUrl + 'teste').subscribe(x => this.receberRequisicao(x))
+  }
+
+  receberRequisicao(value: any): void {
+    console.log(value);
+  }
+
+  toggleOffCanvas(): void {
+    this.showOffCanvas = !this.showOffCanvas;
+  }
+  addProve(): void  {
     let prompt = new PromptModel(this.proofModel.Prompts.length);
     this.proofModel.Prompts.push(prompt);
     this.verificarStatus();
   }
   verProvas(): void {
     console.log(this.proofModel);
+    this.generating = true;
   }
   verificarStatus() {
     this.qtdConfirm = this.proofModel.Prompts.filter(x => x.confirmado === true).length;
@@ -44,5 +63,23 @@ export class ProofModel {
     this.API_KEY = "";
     this.VisualReturn = true;
     this.Prompts = [];
+  }
+}
+
+export class ResponseProof {
+  pdfURL: string;
+  wordURL: string;
+  content: string;
+  status: string;
+  uuid_usuario: string;
+  uuid_prova: string;
+
+  constructor() {
+    this.pdfURL = "";
+    this.wordURL = "";
+    this.content = "";
+    this.status = "";
+    this.uuid_usuario = "";
+    this.uuid_prova = "";
   }
 }
