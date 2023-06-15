@@ -13,12 +13,12 @@ export class QuickyTestComponent {
   qtdNotConfirm: number = 0;
 
   addProve() {
-    let prompt = new PromptModel();
+    let prompt = new PromptModel(this.proofModel.Prompts.length);
     this.proofModel.Prompts.push(prompt);
     this.verificarStatus();
   }
   verProvas(): void {
-    console.log(this.proofModel.Prompts.filter(x => x.confirmado === true));
+    console.log(this.proofModel);
   }
   verificarStatus() {
     this.qtdConfirm = this.proofModel.Prompts.filter(x => x.confirmado === true).length;
@@ -26,6 +26,11 @@ export class QuickyTestComponent {
   }
 
   receberAviso() {
+    this.verificarStatus();
+  }
+  deleteProof(id: number) {
+    let index: number = this.proofModel.Prompts.findIndex(prompt => prompt.id === id);
+    this.proofModel.Prompts.splice(index, 1);
     this.verificarStatus();
   }
 }

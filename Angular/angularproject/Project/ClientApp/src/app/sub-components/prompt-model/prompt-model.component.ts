@@ -11,16 +11,21 @@ export class PromptModelComponent {
 
   @Input() prompt!: PromptModel;
   @Output() status: EventEmitter<boolean> = new EventEmitter();
+  @Output() delete: EventEmitter<number> = new EventEmitter();
 
   Confirm() {
     this.confirmed = !this.confirmed;
     this.prompt.confirmado = this.confirmed;
     this.status.emit();
   }
+  Delete() {
+    this.delete.emit(this.prompt.id);
+  }
 }
 
 export class PromptModel {
 
+  id: number;
   assunto: string;
   materia: string;
   serie: string;
@@ -29,8 +34,9 @@ export class PromptModel {
   possuicontexto: boolean;
   confirmado: boolean;
 
-  constructor()
+  constructor(id: number)
   {
+    this.id = id;
     this.assunto = "";
     this.materia = "";
     this.serie = "";

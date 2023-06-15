@@ -11,7 +11,7 @@
     <div class="chat-box">
       <div class="chat-box-header">
         <div>
-          <input class="form-control" type="text" placeholder="Chave API" aria-label="Chave API">
+          <input [(ngModel)]="proofModel.API_KEY" class="form-control" type="text" placeholder="Chave API" aria-label="Chave API">
         </div>
         <span class="chat-box-toggle">Fechar</span>
       </div>
@@ -28,7 +28,7 @@
             <div class="row">
               <div class="d-flex align-items-center">
                 <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                  <input [(ngModel)]="proofModel.VisualReturn" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
                   <label class="form-check-label" for="flexSwitchCheckChecked">Retorno Visual&nbsp;<small>( Apenas uma prova )</small></label>
                 </div>
               </div>
@@ -39,14 +39,14 @@
                   Adicionar Prova <span class="badge text-bg-success">{{ qtdConfirm }}</span>&nbsp;<span class="badge text-bg-danger">{{ qtdNotConfirm }}</span>
                 </button>
               </div>
-              <div class="col-2">
+              <div class="col">
                 <button class="btn btn-success" (click)="verProvas()">Enviar</button>
               </div>
             </div>
           </div>
         </div>
         <div class="container-fluid mt-2 list-of-proofs">
-          <app-prompt-model *ngFor="let prompt of proofModel.Prompts" [prompt]="prompt" (status)="receberAviso()"></app-prompt-model>
+          <app-prompt-model *ngFor="let prompt of proofModel.Prompts" [prompt]="prompt" (delete)="deleteProof($event)" (status)="receberAviso()"></app-prompt-model>
         </div>
       </div>
     </div>
