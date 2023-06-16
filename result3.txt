@@ -1,0 +1,44 @@
+﻿{
+  "assunto": "A Internacionalização da produção.",
+  "materia": "Geografia",
+  "serie": "3",
+  "nivel": "Ensino médio",
+  "qtdquestoes": 1,
+  "possuicontexto": true,
+  "questoes": [
+    {
+      "numero_questao": "1",
+      "contexto": "Nos últimos anos, tem-se falado muito sobre a internacionalização da produção. O processo consiste em uma série de mudanças ocorridas nas empresas, que passaram a produzir em diferentes países, como forma de reduzir custos e aumentar a eficiência. Com a abertura comercial e a globalização, as empresas encontraram novas possibilidades de operar em diferentes mercados, o que tornou a internacionalização inevitável.",
+      "pergunta": "O que é a internacionalização da produção?",
+      "alternativas": [
+        {
+          "alternativa": "A",
+          "enunciado": "A internacionalização da produção é o processo pelo qual as empresas reduzem custos e aumentam a eficiência, produzindo em diferentes países."
+        },
+        {
+          "alternativa": "B",
+          "enunciado": "A internacionalização da produção é o processo pelo qual as empresas passam a produzir apenas em um país, a fim de reduzir custos."
+        },
+        {
+          "alternativa": "C",
+          "enunciado": "A internacionalização da produção é o processo pelo qual as empresas deixam de produzir em seu país de origem, passando a fabricar apenas em outros países."
+        },
+        {
+          "alternativa": "D",
+          "enunciado": "A internacionalização da produção é o processo pelo qual as empresas passam a vender seus produtos apenas em outros países, sem produzir fora de seu país de origem."
+        },
+        {
+          "alternativa": "E",
+          "enunciado": "A internacionalização da produção é o processo pelo qual as empresas vendem seus produtos no mercado internacional, mas produzem apenas em seu país de origem."
+        }
+      ]
+    }
+  ],
+  "respostas": [
+    {
+      "numero_questao": "1",
+      "alternativa": "A",
+      "explicacao": "A internacionalização da produção consiste em produzir em diferentes países, como forma de reduzir os custos e aumentar a eficiência."
+    }
+  ]
+}

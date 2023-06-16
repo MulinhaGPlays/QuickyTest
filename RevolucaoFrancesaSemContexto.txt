@@ -1,0 +1,80 @@
+{
+  "ano": "",
+  "assunto": "Revolução Francesa",
+  "materia": "História",
+  "serie": "3",
+  "nivel": "Ensino médio",
+  "qtdquestoes": 2,
+  "possuicontexto": false,
+  "questoes": [
+    {
+      "numero_questao": "1",
+      "contexto": "",
+      "pergunta": "O que foi a Revolução Francesa?",
+      "alternativas": [
+        {
+          "alternativa": "A",
+          "enunciado": "Um movimento popular que lutou contra a invasão da França por estrangeiros."
+        },
+        {
+          "alternativa": "B",
+          "enunciado": "Uma guerra civil que ocorreu na França no final do século XVIII."
+        },
+        {
+          "alternativa": "C",
+          "enunciado": "Um movimento político, social e cultural que derrubou a monarquia francesa e instaurou a República."
+        },
+        {
+          "alternativa": "D",
+          "enunciado": "Uma conspiração liderada pela aristocracia francesa para restaurar a monarquia absoluta."
+        },
+        {
+          "alternativa": "E",
+          "enunciado": "Um conflito entre o exército francês e o Império Britânico."
+        }
+      ]
+    },
+    {
+      "numero_questao": "2",
+      "contexto": "",
+      "pergunta": "Quais foram as principais causas da Revolução Francesa?",
+      "qtdalternativas": 5,
+      "alternativas": [
+        {
+          "alternativa": "A",
+          "enunciado": "A crise econômica, a desigualdade social e a influência das ideias iluministas."
+        },
+        {
+          "alternativa": "B",
+          "enunciado": "A influência da Igreja Católica, a insatisfação popular e a guerra contra a Inglaterra."
+        },
+        {
+          "alternativa": "C",
+          "enunciado": "A corrupção do clero, a invasão da França pelos prussianos e a instabilidade da monarquia."
+        },
+        {
+          "alternativa": "D",
+          "enunciado": "A interferência dos Estados Unidos na política francesa, a decadência da corte e a decepção com a Revolução Industrial."
+        },
+        {
+          "alternativa": "E",
+          "enunciado": "A luta contra a influência da Espanha e da Rússia na Europa, a expansão territorial da França e a instauração do sistema parlamentarista."
+        }
+      ]
+    }
+  ],
+  "respostas": [
+    {
+      "numero_questao": "1",
+      "alternativa": "C",
+      "explicacao": "A Revolução Francesa foi um movimento que eclodiu em 1789 e que derrubou a monarquia absoluta, instaurando a República e redefinindo os direitos civis, políticos e econômicos dos cidadãos franceses."
+    },
+    {
+      "numero_questao": "2",
+      "alternativa": "A",
+      "explicacao": "A crise econômica, a desigualdade social e a influência das ideias iluministas foram os principais fatores que culminaram no processo revolucionário na França."
+    }
+  ],
+  "UUID_usuario": "",
+  "UUID_prova": ""
+}

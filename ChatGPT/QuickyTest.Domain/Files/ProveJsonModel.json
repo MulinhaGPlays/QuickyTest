@@ -1,0 +1,44 @@
+{
+  "assunto": "",
+  "materia": "",
+  "serie": "",
+  "nivel": "",
+  "qtdquestoes": 10,
+  "possuicontexto": false,
+  "questoes": [
+    {
+      "numero_questao": 1,
+      "contexto": "",
+      "pergunta": "",
+      "alternativas": [
+        {
+          "alternativa": "A",
+          "enunciado": ""
+        },
+        {
+          "alternativa": "B",
+          "enunciado": ""
+        },
+        {
+          "alternativa": "C",
+          "enunciado": ""
+        },
+        {
+          "alternativa": "D",
+          "enunciado": ""
+        },
+        {
+          "alternativa": "E",
+          "enunciado": ""
+        }
+      ]
+    }
+  ],
+  "respostas": [
+    {
+      "numero_questao": 1,
+      "alternativa": "A",
+      "explicação": ""
+    }
+  ]
+}

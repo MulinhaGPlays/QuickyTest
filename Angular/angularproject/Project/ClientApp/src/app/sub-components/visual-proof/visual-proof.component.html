@@ -1,0 +1,14 @@
+<div class="accordion w-100">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button (click)="toggleAccordion()" class="accordion-button" type="button" data-bs-toggle="collapse" aria-expanded="true">
+        {{ gerando ? 'Gerando prova. . .' : 'Nenhuma prova foi gerada ainda. . .' }}
+      </button>
+    </h2>
+    <div class="accordion-collapse collapse" [class]="{'show': gerando}">
+      <div class="accordion-body">
+        {{ texto }}
+      </div>
+    </div>
+  </div>
+</div>

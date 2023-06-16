@@ -1,0 +1,40 @@
+﻿{
+  "assunto": "A Internacionalização da produção.",
+  "materia": "Geografia",
+  "serie": "3",
+  "nivel": "Ensino médio",
+  "qtdquestoes": 1,
+  "possuicontexto": true,
+  "questoes": [
+    {
+      "numero_questao": "1",
+      "contexto": "Nos últimos anos, a internacionalização da produção se tornou cada vez mais comum no mundo inteiro. Empresas de todo tipo e tamanho estão expandindo seus negócios para além das fronteiras de seus países de origem, buscando novos mercados e mão de obra mais barata. Isso tem consequências significativas para a economia global e para as pessoas que trabalham nessas empresas.",
+      "pergunta": "O que é a internacionalização da produção?",
+      "alternativas": [
+        {
+          "alternativa": "A",
+          "enunciado": "A retração da produção industrial em nível global."
+        },
+        {
+          "alternativa": "B",
+          "enunciado": "A concentração da produção industrial em um único país."
+        },
+        {
+          "alternativa": "C",
+          "enunciado": "A expansão dos negócios das empresas para além das fronteiras de seus países de origem."
+        },
+        {
+          "alternativa": "D",
+          "enunciado": "O aumento do protecionismo comercial entre países."
+        }
+      ]
+    }
+  ],
+  "respostas": [
+    {
+      "numero_questao": "1",
+      "alternativa": "C",
+      "explicacao": "A internacionalização da produção é a expansão dos negócios das empresas para além das fronteiras de seus países de origem, buscando novos mercados e mão de obra mais barata."
+    }
+  ]
+}

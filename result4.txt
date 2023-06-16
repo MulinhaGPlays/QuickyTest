@@ -1,0 +1,40 @@
+﻿{
+    "assunto": "A Internacionalização da produção.",
+    "materia": "Geografia",
+    "serie": "3",
+    "nivel": "Ensino médio",
+    "qtdquestoes": 1,
+    "possuicontexto": true,
+    "questoes": [
+        {
+            "numero_questao": "1",
+            "contexto": "Devido à globalização e à facilidade de comunicação e transportes atualmente, as empresas têm ampliado suas atividades e produção para além das fronteiras nacionais. Essa estratégia é conhecida como internacionalização da produção e busca diversificar mercados, reduzir riscos e aumentar a competitividade.",
+            "pergunta": "Qual(is) o(s) objetivo(s) da internacionalização da produção?",
+            "alternativas": [
+                {
+                    "alternativa": "A",
+                    "enunciado": "Reduzir custos e aumentar a nacionalização dos mercados."
+                },
+                {
+                    "alternativa": "B",
+                    "enunciado": "Ampliar o mercado, diversificar os negócios e reduzir riscos."
+                },
+                {
+                    "alternativa": "C",
+                    "enunciado": "Explorar o mercado interno, reduzir os custos de produção e aumentar o lucro."
+                },
+                {
+                    "alternativa": "D",
+                    "enunciado": "Investir em tecnologias nacionais e estimular a economia do país."
+                }
+            ]
+        }
+    ],
+    "respostas": [
+        {
+            "numero_questao": "1",
+            "alternativa": "B",
+            "explicacao": "A internacionalização da produção busca ampliar o mercado, diversificar os negócios e reduzir riscos."
+        }
+    ]
+}

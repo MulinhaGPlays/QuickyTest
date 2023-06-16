@@ -1,0 +1,34 @@
+{
+  "ano": 2023,
+  "assunto": "Geometria",
+  "materia": "Matemática",
+  "serie": "6",
+  "nivel": "Fundamental",
+  "qtdquestoes": 1,
+  "possuicontexto": false,
+  "questoes": [
+    {
+      "numero_questao": "1.",
+      "imagem": null,
+      "contexto": "",
+      "pergunta": "Qual é a fórmula para calcular a área de um triângulo?",
+      "qtdalternativas": 5,
+      "alternativas": [
+        { "alternativa": "a)", "enunciado": "Base x Altura" },
+        { "alternativa": "b)", "enunciado": "Lado x Lado" },
+        { "alternativa": "c)", "enunciado": "(Base x Altura) / 2" },
+        { "alternativa": "d)", "enunciado": "Diagonal x Diagonal" },
+        { "alternativa": "e)", "enunciado": "Comprimento da circunferência" }
+      ]
+    }
+  ],
+  "respostas": [
+    {
+      "numero_questao": "1.",
+      "alternativa": "c)",
+      "explicacao": "A área de um triângulo é dada pela fórmula (base x altura) / 2."
+    }
+  ],
+  "UUID_usuario": null,
+  "UUID_prova": "e65c7e21-774a-43c8-aec7-f74fc771d3c6"
+}
