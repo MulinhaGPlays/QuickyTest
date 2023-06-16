@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddSingleton<IProveGenerator, ProveGenerator>();
+builder.Services.AddSingleton<IProveGenerator, ProveGeneratorMock>();
 builder.Services.AddTransient<IProveGeneratorRepository, ProveGeneratorRepository>();
 
 builder.Services.AddSwaggerGen();

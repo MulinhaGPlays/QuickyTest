@@ -9,7 +9,7 @@ namespace QuickyTest.API.Models
         [Required]
         [DataType(DataType.Text)]
         [Display(Name = "Chave API: https://platform.openai.com/account/api-keys")]
-        public required string API_KEY { get; set; }
+        public string API_KEY { get; set; }
 
         [Display(Name = "Habilitar retorno visual - limita a geração a uma prova, mas vc verá ela sendo criada.")]
         public bool VisualReturn { get; set; } = true;
@@ -17,6 +17,6 @@ namespace QuickyTest.API.Models
         [Required]
         [Display(Name = "Dados das provas")]
         [LimitOfVisualReturn(nameof(VisualReturn))]
-        public required List<Prompt> Prompts { get; set; }
+        public List<Prompt> Prompts { get; set; }
     }
 }
